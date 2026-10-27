@@ -9,7 +9,12 @@ export function isAdmin(request: Request) {
 }
 export function sameOrigin(request: Request) {
  const origin = request.headers.get('origin');
- return !origin || origin === new URL(request.url).origin;
+ if (!origin) return true;
+ try {
+  const parsed = new URL(origin);
+  // Next may use an internal hostname in request.url behind a proxy.
+  return ['http:', 'https:'].includes(parsed.protocol) && parsed.host === request.headers.get('host');
+ } catch { return false; }
 }
 export function allowSubmission(request: Request) {
  // Global durable limit; no trust in spoofable forwarded IP headers.
