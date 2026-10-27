@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="custPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#fdf4ff"/>
+      <stop offset="100%" stop-color="#fae8ff"/>
+    </linearGradient>
+    <linearGradient id="purpleRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="purpleMedal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#581c87"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#custPaper)"/>
+  <rect x="25" y="25" width="750" height="510" rx="8" fill="none" stroke="#7e22ce" stroke-width="4"/>
+  <rect x="33" y="33" width="734" height="494" rx="4" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Left Registrar Logo -->
+  <g transform="translate(90, 75)">
+    <circle cx="0" cy="0" r="28" fill="#581c87"/>
+    <text x="0" y="4" font-family="sans-serif" font-size="11" font-weight="black" fill="#ffffff" text-anchor="middle">CSAT</text>
+    <text x="0" y="15" font-family="sans-serif" font-size="7" fill="#e9d5ff" text-anchor="middle">EXCELLENCE</text>
+    <text x="0" y="40" font-family="sans-serif" font-size="8" font-weight="bold" fill="#581c87" text-anchor="middle">CUSTOMER CARE</text>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(400, 85)" text-anchor="middle">
+    <text y="0" font-family="sans-serif" font-size="26" font-weight="900" fill="#581c87" letter-spacing="1.5">
+      CUSTOMER SATISFACTION MANAGEMENT
+    </text>
+    <text y="22" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="bold" fill="#334155">
+      گواهینامه بین‌المللی رضایت مشتری و رسیدگی به شکایات
+    </text>
+    <line x1="-150" y1="32" x2="150" y2="32" stroke="#a855f7" stroke-width="2"/>
+  </g>
+
+  <!-- Big Badge -->
+  <g transform="translate(400, 165)" text-anchor="middle">
+    <rect x="-160" y="-20" width="320" height="40" rx="20" fill="url(#purpleRibbon)"/>
+    <text y="7" font-family="sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1">
+      ISO 10002 : 2018
+    </text>
+  </g>
+
+  <!-- Company -->
+  <g transform="translate(400, 230)" text-anchor="middle">
+    <text y="0" font-family="sans-serif" font-size="11" fill="#64748b" letter-spacing="1">
+      QUALITY SERVICE &amp; ACCOUNTABILITY ACCREDITATION
+    </text>
+    <text y="26" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" font-weight="900" fill="#581c87">
+      صنایع تام فولاد (سهامی خاص)
+    </text>
+    <text y="46" font-family="sans-serif" font-size="12" font-weight="bold" fill="#7e22ce">
+      TAM STEEL INDUSTRIAL CO. (P.J.S)
+    </text>
+  </g>
+
+  <!-- Scope -->
+  <g transform="translate(400, 310)" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif">
+    <text y="0" font-size="12" fill="#334155">
+      رسیدگی سریع و شفاف به شکایات، عودت قطعی بار در صورت مغایرت متالورژی MTC
+    </text>
+    <text y="20" font-size="12" fill="#334155">
+      و استقرار منشور تعهد پاسخگویی حداکثر ۲۴ ساعته به خریداران و صنایع همکار
+    </text>
+    <text y="42" font-family="sans-serif" font-size="10" fill="#64748b">
+      Transparent dispute resolution, unconditional return on MTC deviation, and 24h client response guarantee.
+    </text>
+  </g>
+
+  <!-- Meta Info -->
+  <g transform="translate(90, 390)" font-family="sans-serif" font-size="11">
+    <rect x="0" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="92" y="20" fill="#64748b" text-anchor="middle" font-size="9">CERTIFICATE NO.</text>
+    <text x="92" y="38" fill="#581c87" text-anchor="middle" font-weight="bold" font-family="monospace">CSM-10002-IR298</text>
+
+    <rect x="215" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="307" y="20" fill="#64748b" text-anchor="middle" font-size="9">INITIAL ISSUE DATE</text>
+    <text x="307" y="38" fill="#0f172a" text-anchor="middle" font-weight="bold">2022-02-15</text>
+
+    <rect x="430" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="522" y="20" fill="#64748b" text-anchor="middle" font-size="9">VALID UNTIL</text>
+    <text x="522" y="38" fill="#16a34a" text-anchor="middle" font-weight="bold">2028-02-14</text>
+  </g>
+
+  <!-- Customer Care Seal -->
+  <g transform="translate(700, 465)">
+    <circle cx="0" cy="0" r="34" fill="url(#purpleMedal)" stroke="#4a044e" stroke-width="2"/>
+    <text x="0" y="-8" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">TRUSTED</text>
+    <text x="0" y="5" font-family="sans-serif" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">ISO 10002</text>
+    <text x="0" y="16" font-family="sans-serif" font-size="7" fill="#f5d0fe" text-anchor="middle">SATISFACTION</text>
+  </g>
+
+  <g transform="translate(300, 475)">
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="0" y="14" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Customer Relations &amp; Quality Audit Board</text>
+  </g>
+</svg>

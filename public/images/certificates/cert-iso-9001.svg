@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="isoPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="blueRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c9b"/>
+      <stop offset="100%" stop-color="#3066be"/>
+    </linearGradient>
+    <linearGradient id="goldMedal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="url(#isoPaper)"/>
+
+  <!-- Border & Frames -->
+  <rect x="25" y="25" width="750" height="510" rx="8" fill="none" stroke="#090c9b" stroke-width="4"/>
+  <rect x="33" y="33" width="734" height="494" rx="4" fill="none" stroke="#3066be" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="38" y="38" width="724" height="484" rx="2" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Left Header Registrar Logo -->
+  <g transform="translate(90, 75)">
+    <circle cx="0" cy="0" r="28" fill="#090c9b"/>
+    <text x="0" y="4" font-family="sans-serif" font-size="12" font-weight="black" fill="#ffffff" text-anchor="middle">TÜV</text>
+    <text x="0" y="15" font-family="sans-serif" font-size="7" fill="#93c5fd" text-anchor="middle">CERT</text>
+    <text x="0" y="40" font-family="sans-serif" font-size="8" font-weight="bold" fill="#090c9b" text-anchor="middle">INTERNATIONAL</text>
+  </g>
+
+  <!-- Right IAF Logo -->
+  <g transform="translate(710, 75)">
+    <circle cx="0" cy="0" r="28" fill="#f8fafc" stroke="#090c9b" stroke-width="2"/>
+    <text x="0" y="4" font-family="sans-serif" font-size="13" font-weight="black" fill="#090c9b" text-anchor="middle">IAF</text>
+    <text x="0" y="16" font-family="sans-serif" font-size="6" fill="#64748b" text-anchor="middle">MLA SIGNATORY</text>
+    <text x="0" y="40" font-family="sans-serif" font-size="8" font-weight="bold" fill="#090c9b" text-anchor="middle">ACCREDITED</text>
+  </g>
+
+  <!-- Certificate Main Title -->
+  <g transform="translate(400, 85)" text-anchor="middle">
+    <text y="0" font-family="sans-serif" font-size="28" font-weight="900" fill="#090c9b" letter-spacing="2">
+      CERTIFICATE OF REGISTRATION
+    </text>
+    <text y="22" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="bold" fill="#475569">
+      گواهینامه بین‌المللی سیستم مدیریت کیفیت
+    </text>
+    <line x1="-150" y1="32" x2="150" y2="32" stroke="#3066be" stroke-width="2"/>
+  </g>
+
+  <!-- Certified Standard Big Badge -->
+  <g transform="translate(400, 165)" text-anchor="middle">
+    <rect x="-160" y="-20" width="320" height="40" rx="20" fill="url(#blueRibbon)"/>
+    <text y="7" font-family="sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1">
+      ISO 9001 : 2015
+    </text>
+  </g>
+
+  <!-- Certified Company -->
+  <g transform="translate(400, 230)" text-anchor="middle">
+    <text y="0" font-family="sans-serif" font-size="11" fill="#64748b" letter-spacing="1">
+      THIS IS TO CERTIFY THAT THE MANAGEMENT SYSTEM OF
+    </text>
+    <text y="26" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" font-weight="900" fill="#090c9b">
+      صنایع تام فولاد (سهامی خاص)
+    </text>
+    <text y="46" font-family="sans-serif" font-size="12" font-weight="bold" fill="#3066be">
+      TAM STEEL INDUSTRIAL CO. (P.J.S)
+    </text>
+  </g>
+
+  <!-- Scope description -->
+  <g transform="translate(400, 310)" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif">
+    <text y="0" font-size="12" fill="#334155" max-width="600">
+      در زمینه: مدیریت کیفیت خدمات فرآوری، اسلیتینگ و نواربری، شیت‌کن، کنترل تلرانس ابعادی
+    </text>
+    <text y="20" font-size="12" fill="#334155">
+      و توزیع مستقیم مقاطع تخت فولادی و ورق‌های صنعتی، ساختمانی و خودرویی
+    </text>
+    <text y="42" font-family="sans-serif" font-size="10" fill="#64748b">
+      Scope: Processing, precision slitting, cut-to-length shearing, dimensional inspection, and distribution of industrial steel coils.
+    </text>
+  </g>
+
+  <!-- Meta Info Boxes -->
+  <g transform="translate(90, 390)" font-family="sans-serif" font-size="11">
+    <rect x="0" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="92" y="20" fill="#64748b" text-anchor="middle" font-size="9">CERTIFICATE NO.</text>
+    <text x="92" y="38" fill="#090c9b" text-anchor="middle" font-weight="bold" font-family="monospace">QMS-9001-IR882</text>
+
+    <rect x="215" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="307" y="20" fill="#64748b" text-anchor="middle" font-size="9">INITIAL ISSUE DATE</text>
+    <text x="307" y="38" fill="#0f172a" text-anchor="middle" font-weight="bold">2021-04-10</text>
+
+    <rect x="430" y="0" width="185" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="522" y="20" fill="#64748b" text-anchor="middle" font-size="9">VALID UNTIL</text>
+    <text x="522" y="38" fill="#16a34a" text-anchor="middle" font-weight="bold">2027-04-09</text>
+  </g>
+
+  <!-- Golden Embossed Medal / Stamp -->
+  <g transform="translate(700, 465)">
+    <circle cx="0" cy="0" r="34" fill="url(#goldMedal)" stroke="#78350f" stroke-width="2"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="0" y="-8" font-family="sans-serif" font-size="8" font-weight="bold" fill="#451a03" text-anchor="middle">QUALITY</text>
+    <text x="0" y="5" font-family="sans-serif" font-size="12" font-weight="900" fill="#451a03" text-anchor="middle">ISO 9001</text>
+    <text x="0" y="16" font-family="sans-serif" font-size="7" fill="#451a03" text-anchor="middle">CERTIFIED</text>
+  </g>
+
+  <!-- Registrar Signatures -->
+  <g transform="translate(200, 475)">
+    <path d="M -35 -10 Q -15 -25 5 -10 T 35 -15" fill="none" stroke="#090c9b" stroke-width="1.8"/>
+    <line x1="-50" y1="0" x2="50" y2="0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="0" y="14" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Lead Quality Auditor</text>
+  </g>
+
+  <g transform="translate(420, 475)">
+    <path d="M -25 -5 Q 0 -22 25 -8 T 45 -18" fill="none" stroke="#090c9b" stroke-width="1.8"/>
+    <line x1="-50" y1="0" x2="50" y2="0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="0" y="14" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Managing Director</text>
+  </g>
+</svg>

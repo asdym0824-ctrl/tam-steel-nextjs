@@ -1,0 +1,1737 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-fa: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    --font-en: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    /* User Specified 5-Color System */
+    --color-charcoal: #3c3744;
+    --color-royal: #090c9b;
+    --color-cobalt: #3066be;
+    --color-ice: #b4c5e4;
+    --color-ivory: #fbfff1;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-fa);
+  }
+
+  [dir="ltr"] {
+    font-family: var(--font-en);
+  }
+}
+
+/* =========================================================
+   LIGHT THEME (DEFAULT) RULES
+   Applied automatically when .dark is NOT present
+   ========================================================= */
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Base Body & App Container in Light Mode */
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) .min-h-screen {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header in Light Mode */
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Section Backgrounds across all sections */
+html:not(.dark) section,
+html:not(.dark) .bg-\[\#242129\],
+html:not(.dark) .bg-\[\#231f2a\],
+html:not(.dark) .bg-\[\#28242f\],
+html:not(.dark) .bg-\[\#1c1922\] {
+  background-color: #f8fafc !important;
+}
+
+/* Header specific background overrides */
+html:not(.dark) header.bg-\[\#242129\],
+html:not(.dark) header .bg-\[\#242129\]\/95,
+html:not(.dark) header .bg-\[\#242129\] {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Cards, Modals, Forms & Panels in Light Mode */
+html:not(.dark) .bg-\[\#2a2632\],
+html:not(.dark) .bg-\[\#2d2935\],
+html:not(.dark) .bg-\[\#2f2b36\],
+html:not(.dark) .bg-\[\#282430\],
+html:not(.dark) .bg-\[\#2e2a35\],
+html:not(.dark) .bg-\[\#2e2a36\],
+html:not(.dark) .bg-\[\#3c3744\],
+html:not(.dark) .bg-\[\#2f2b36\]\/90,
+html:not(.dark) .bg-\[\#2f2b36\]\/95,
+html:not(.dark) .bg-\[\#3c3744\]\/70,
+html:not(.dark) .bg-\[\#3c3744\]\/80,
+html:not(.dark) .bg-\[\#3c3744\]\/90,
+html:not(.dark) .corporate-profile-card,
+html:not(.dark) .corporate-profile-card .metric-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .corporate-profile-card {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .corporate-profile-card .metric-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Hover Backgrounds */
+html:not(.dark) .hover\:bg-\[\#3c3744\]:hover,
+html:not(.dark) .hover\:bg-\[\#35303f\]:hover,
+html:not(.dark) .hover\:bg-\[\#2e2a35\]:hover,
+html:not(.dark) .hover\:bg-\[\#2a2632\]:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .hover\:bg-\[\#4d4757\]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Secondary Button and Tab Backgrounds */
+html:not(.dark) button.bg-\[\#3c3744\],
+html:not(.dark) .flex.bg-\[\#3c3744\] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Dark Gradients adapted to pristine Light Gradients */
+/* 1. Quick CTA Banner (Section 11) */
+html:not(.dark) section.bg-gradient-to-r[class*="from-[#090c9b]/40"] {
+  background-image: linear-gradient(to right, #eff6ff, #f8fafc, #ffffff) !important;
+  border-top-color: #bfdbfe !important;
+}
+
+/* 2. FAQ Bottom Banner (Section 10) */
+html:not(.dark) div.bg-gradient-to-r[class*="from-[#090c9b]/50"] {
+  background-image: linear-gradient(to right, #eff6ff, #e0e7ff, #f8fafc) !important;
+  border-color: #bfdbfe !important;
+}
+
+/* 3. Hero Right Card (Section 1) */
+html:not(.dark) div.bg-gradient-to-br[class*="from-[#3c3744]"] {
+  background-image: linear-gradient(to bottom right, #ffffff, #f8fafc, #eff6ff) !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* 4. Market Ticker */
+html:not(.dark) section.bg-\[\#1c1922\],
+html:not(.dark) div.bg-\[\#1c1a20\] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .market-ticker-wrapper,
+html.light .market-ticker-wrapper,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.dark .market-ticker-wrapper,
+html.dark div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background-color: #18161e !important;
+  border-color: rgba(180, 197, 228, 0.15) !important;
+}
+
+/* Focused Selectors: White text for MarketTicker title and quote button text */
+div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1),
+div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) button span,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) button span,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div#market-ticker-container:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) button span {
+  color: #ffffff !important;
+}
+
+/* Market Ticker edge fade masks in Light Mode: subtle white gradient matching white background */
+html:not(.dark) .ticker-fade-right,
+html.light .ticker-fade-right {
+  background-image: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+html:not(.dark) .ticker-fade-left,
+html.light .ticker-fade-left {
+  background-image: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+/* Borders in Light Mode */
+html:not(.dark) [class*="border-\[\#b4c5e4\]"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Shadows in Light Mode */
+html:not(.dark) [class*="shadow-black"] {
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* General Typography in Light Mode - Standard Slate Gray #475569 */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3:not(.absolute *):not([class*="drop-shadow"]):not(.text-slate-800):not(.text-slate-900),
+html:not(.dark) h4:not(.absolute *):not([class*="drop-shadow"]):not(.text-slate-800):not(.text-slate-900) {
+  color: #0f172a !important;
+}
+
+/* All secondary paragraphs, descriptions, and text in Light Mode: Standard Slate Gray #475569 */
+html:not(.dark) p:not(.absolute *):not([class*="drop-shadow"]) {
+  color: #475569 !important;
+}
+
+html:not(.dark) [class*="text-[#b4c5e4]"]:not(.absolute *):not([class*="bg-[#3066be]"]):not([class*="bg-[#090c9b]"]):not([class*="animate-marquee"] *):not(.animate-marquee-rtl *):not(.animate-marquee-ltr *) {
+  color: #475569 !important;
+}
+
+html:not(.dark) .hover\:text-\[\#fbfff1\]:hover:not([class*="bg-[#3066be]"]) {
+  color: #0f172a !important;
+}
+
+/* Secondary Button Spans, Action Links, and Captions: #475569 */
+html:not(.dark) button:not([class*="bg-[#3066be]"]):not([class*="bg-[#090c9b]"]):not([class*="bg-emerald"]):not([class*="bg-amber"]):not([class*="bg-red"]):not(.absolute *) span:not([class*="text-amber"]):not([class*="text-emerald"]),
+html:not(.dark) a:not([class*="bg-[#3066be]"]):not([class*="bg-[#090c9b]"]):not([class*="bg-emerald"]):not(.absolute *) span:not([class*="text-amber"]):not([class*="text-emerald"]) {
+  color: #475569 !important;
+}
+
+html:not(.dark) button:not([class*="bg-[#3066be]"]):hover span,
+html:not(.dark) a:not([class*="bg-[#3066be]"]):hover span {
+  color: #0f172a !important;
+}
+
+/* Navigation & Header Text in Light Mode: #475569 */
+html:not(.dark) nav button,
+html:not(.dark) nav button span,
+html:not(.dark) header [aria-label="Change Language"] span,
+html:not(.dark) header [aria-label="Change Language"] svg {
+  color: #475569 !important;
+}
+
+html:not(.dark) nav button:hover,
+html:not(.dark) nav button:hover span {
+  color: #0f172a !important;
+}
+
+/* Footer Elements: Standard Slate Gray #475569 */
+html:not(.dark) footer p,
+html:not(.dark) footer span:not([class*="text-amber"]):not([class*="text-emerald"]):not(.font-bold),
+html:not(.dark) footer div:not(.font-bold) > span,
+html:not(.dark) footer a,
+html:not(.dark) footer li button,
+html:not(.dark) footer .text-\[\#b4c5e4\],
+html:not(.dark) footer [class*="text-[#b4c5e4]"] {
+  color: #475569 !important;
+}
+
+html:not(.dark) footer li button:hover,
+html:not(.dark) footer a:hover {
+  color: #0f172a !important;
+}
+
+/* Section #licenses, FAQ, Client Journey, Team, Contract, Hero, and Nav: #475569 */
+html:not(.dark) h5,
+html:not(.dark) [class*="text-[#475569]"],
+html:not(.dark) nav button:first-of-type,
+html:not(.dark) section#licenses span:not([class*="bg-[#3066be]"]):not([class*="text-amber"]):not([class*="text-emerald"]):not(.font-black):not(.text-white),
+html:not(.dark) section#licenses p,
+html:not(.dark) section#licenses button span:not(.text-white),
+html:not(.dark) [class*="bg-[#242129]"] span:not(.text-\[\#fbfff1\]):not(.font-bold):not(.text-white),
+html:not(.dark) .font-mono:not(.font-black):not(.font-bold):not(.text-\[\#3066be\]):not(.text-white) {
+  color: #475569 !important;
+}
+
+/* Explicit Light Mode White Text & Icons for Focused Elements */
+html:not(.dark) .text-white,
+html:not(.dark) .\!text-white,
+html:not(.dark) [class*="!text-white"],
+html:not(.dark) [class*="text-white"],
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(1) div:nth-of-type(2) span:nth-of-type(1) span:nth-of-type(2),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(1) div:nth-of-type(2) button:nth-of-type(1) span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(5) div:nth-of-type(2) div:nth-of-type(2) form:nth-of-type(1) div:nth-of-type(1) button:nth-of-type(1) span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(8) div:nth-of-type(3) div:nth-of-type(3) div button div:nth-of-type(2) svg,
+html:not(.dark) section:nth-of-type(8) div:nth-of-type(3) div:nth-of-type(4) div:nth-of-type(2) button:nth-of-type(1) span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+html:not(.dark) svg.stroke-white,
+html:not(.dark) svg.text-white,
+html:not(.dark) section:nth-of-type(8) div:nth-of-type(3) div:nth-of-type(3) div button div:nth-of-type(2) svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* CRITICAL: Text Layered over Images/Photos/Dark Scrims must remain Pristine White */
+html:not(.dark) .absolute h3,
+html:not(.dark) .absolute p,
+html:not(.dark) .absolute span.text-\[\#fbfff1\],
+html:not(.dark) .absolute .drop-shadow,
+html:not(.dark) [class*="bg-gradient-to-t"] ~ div h3,
+html:not(.dark) [class*="bg-gradient-to-t"] ~ div p,
+html:not(.dark) [class*="bg-gradient-to-t"] ~ div span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+html:not(.dark) .absolute span[class*="bg-\[\#242129\]"] {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Badges & Category Tags in Light Mode */
+html:not(.dark) .rounded-full[class*="bg-[#090c9b]"],
+html:not(.dark) .rounded-full[class*="bg-[#3066be]"] {
+  background-color: #eff6ff !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
+}
+
+html:not(.dark) .rounded-full[class*="bg-[#090c9b]"] *,
+html:not(.dark) .rounded-full[class*="bg-[#3066be]"] * {
+  color: #1e40af !important;
+}
+
+/* Form Inputs in Light Mode */
+html:not(.dark) input:not([type="checkbox"]):not([type="radio"]),
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Keep accent button texts crisp white */
+html:not(.dark) [class*="bg-[#3066be]"],
+html:not(.dark) [class*="bg-[#090c9b]"],
+html:not(.dark) [class*="bg-emerald"],
+html:not(.dark) [class*="bg-amber"],
+html:not(.dark) [class*="bg-red"] {
+  color: #ffffff !important;
+}
+
+html:not(.dark) [class*="bg-[#3066be]"] span,
+html:not(.dark) [class*="bg-[#090c9b]"] span {
+  color: #ffffff !important;
+}
+
+/* Logo container in navbar stays dark charcoal for silver logo pop */
+html:not(.dark) .brand-logo-container {
+  background-color: #242129 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Light Mode Footer: Crisp, high-contrast, fully readable */
+html:not(.dark) footer {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+html:not(.dark) footer h4,
+html:not(.dark) footer .text-\[\#fbfff1\] {
+  color: #0f172a !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer li button,
+html:not(.dark) footer .text-\[\#b4c5e4\] {
+  color: #475569 !important;
+}
+
+html:not(.dark) footer li button:hover {
+  color: #3066be !important;
+}
+
+html:not(.dark) footer [class*="border-\[\#b4c5e4\]"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Trust Badges in Footer (Enamad & E-Union) */
+html:not(.dark) footer .bg-\[\#2a2632\] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) footer .bg-\[\#2a2632\]:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #3066be !important;
+}
+
+html:not(.dark) footer .bg-\[\#1e1b23\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) footer svg circle[fill="#1b1822"] {
+  fill: #ffffff;
+}
+
+/* FAQ Filter Tabs Polish */
+html:not(.dark) .flex.bg-\[\#3c3744\] button:not([class*="bg-[#3066be]"]) {
+  color: #475569 !important;
+}
+
+html:not(.dark) .flex.bg-\[\#3c3744\] button:not([class*="bg-[#3066be]"]):hover {
+  color: #0f172a !important;
+  background-color: #e2e8f0 !important;
+}
+
+/* Ambient section blurs lowered in light mode for clean crisp contrast */
+html:not(.dark) .blur-3xl {
+  opacity: 0.12 !important;
+}
+
+/* Light Mode Scrollbars */
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom steel gradient and grid patterns with user palette */
+.bg-grid-steel {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(180, 197, 228, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 197, 228, 0.07) 1px, transparent 1px);
+}
+
+.bg-dot-steel {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(48, 102, 190, 0.25) 1px, transparent 1px);
+}
+
+/* Custom scrollbar matching palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #242129;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c3744;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3066be;
+}
+
+/* Continuous Infinite Ticker Tape (نوار بی نهایت قیمت های روز) */
+@keyframes ticker-infinite-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes ticker-marquee-ltr {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.ticker-infinite-track,
+.animate-marquee-ltr {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  animation: ticker-infinite-scroll 55s linear infinite !important;
+  will-change: transform !important;
+  user-select: none !important;
+  touch-action: pan-y !important;
+}
+
+.ticker-infinite-track:hover,
+.ticker-infinite-track:active,
+.animate-marquee-ltr:hover,
+.animate-marquee-ltr:active {
+  animation-play-state: paused !important;
+}
+
+/* Light mode FAQ Category Buttons on click/selection: Background white */
+html:not(.dark) .faq-category-container button.bg-white,
+html:not(.dark) section#faq .faq-category-container button[class*="bg-white"],
+html:not(.dark) main section:nth-of-type(8) div:nth-of-type(3) > div:nth-of-type(2) button[class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #090c9b !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .faq-category-container button.bg-white span,
+html:not(.dark) section#faq .faq-category-container button[class*="bg-white"] span {
+  color: #090c9b !important;
+}
+
+/* Light mode FAQ Category Buttons: Icons stay blue and do NOT turn white on click/selection */
+html:not(.dark) .faq-category-container button svg,
+html:not(.dark) section#faq .faq-category-container button svg,
+html:not(.dark) main section:nth-of-type(8) div:nth-of-type(3) > div:nth-of-type(2) button svg,
+html:not(.dark) div#root > div > main > div > section:nth-of-type(8) > div:nth-of-type(3) > div:nth-of-type(2) > button > svg {
+  color: #3066be !important;
+  stroke: #3066be !important;
+}
+
+/* Light mode Accordion Chevron Toggle: Background white, icon standard gray */
+html:not(.dark) main section:nth-of-type(8) div:nth-of-type(3) > div:nth-of-type(3) > div button > div:nth-of-type(2),
+html:not(.dark) div#root > div#app-main-wrapper > main > div > section:nth-of-type(8) > div:nth-of-type(3) > div:nth-of-type(3) > div > button > div:nth-of-type(2) {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) main section:nth-of-type(8) div:nth-of-type(3) > div:nth-of-type(3) > div button > div:nth-of-type(2) svg,
+html:not(.dark) div#root > div#app-main-wrapper > main > div > section:nth-of-type(8) > div:nth-of-type(3) > div:nth-of-type(3) > div > button > div:nth-of-type(2) > svg {
+  color: #64748b !important;
+  stroke: #64748b !important;
+}
+
+/* Light mode Catalog Tab Switcher Container: White background */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Light mode Catalog Tab 2 (button:nth-of-type(2)): Standard gray text and icon */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) span,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) span {
+  color: #64748b !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) svg,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) svg {
+  color: #64748b !important;
+  stroke: #64748b !important;
+}
+
+/* Light mode Standard Gray (#475569) overrides for focused elements */
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(1) div:nth-of-type(1) > span:nth-of-type(1) {
+  background-color: #64748b !important;
+  color: #475569 !important;
+}
+
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(1) div:nth-of-type(1) span {
+  color: #475569 !important;
+}
+
+/* Light mode fix for Hero capability highlight box & white text */
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) {
+  background-color: #242129 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Explicitly remove any blue box, border, outline, background or selection box from the focused elements */
+div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) > span:nth-of-type(1),
+div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1) *,
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1) *,
+div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) > span:nth-of-type(1),
+div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1) *,
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1) * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) span:nth-of-type(1) span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(2),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) > span:nth-of-type(2),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1) > span,
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) span:nth-of-type(1) span,
+html:not(.dark) div#root > div > main > div > section:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2),
+html:not(.dark) section:nth-of-type(1) div:nth-of-type(5) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) div:nth-of-type(2) > span:nth-of-type(2) {
+  color: #ffffff !important;
+}
+
+html:not(.dark) div#root > div > main > div > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong:nth-of-type(1),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong:nth-of-type(2),
+html:not(.dark) div#root > div > main > div > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1) > strong:nth-of-type(3),
+html:not(.dark) section:nth-of-type(5) div:nth-of-type(2) div:nth-of-type(2) div:nth-of-type(1) div:nth-of-type(2) p:nth-of-type(1) strong,
+html:not(.dark) section:nth-of-type(5) strong {
+  color: #475569 !important;
+}
+
+/* Light mode: Key stats badges text color set to white (only in light mode) */
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(2) div:nth-of-type(3) div:nth-of-type(1) > div > div:nth-of-type(2) > span:nth-of-type(1),
+html.light section:nth-of-type(2) div:nth-of-type(3) div:nth-of-type(1) > div > div:nth-of-type(2) > span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+/* Light mode ONLY: Key stats '+' sign set to white */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) section:nth-of-type(2) div:nth-of-type(3) div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light section:nth-of-type(2) div:nth-of-type(3) div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+/* Light mode: Live Market Ticker cards & price visibility */
+html:not(.dark) .market-rate-card,
+html.light .market-rate-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .market-rate-card:hover,
+html.light .market-rate-card:hover {
+  background-color: #f8fafc !important;
+  border-color: #93c5fd !important;
+}
+
+html:not(.dark) .market-rate-card .rate-name,
+html.light .market-rate-card .rate-name {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .market-rate-card .rate-price,
+html.light .market-rate-card .rate-price {
+  color: #1e40af !important;
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+
+
+/* Light mode: Corporate service cards high contrast */
+html:not(.dark) .corporate-service-card,
+html.light .corporate-service-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .corporate-service-card h3,
+html.light .corporate-service-card h3 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .corporate-service-card p,
+html.light .corporate-service-card p {
+  color: #475569 !important;
+}
+
+html:not(.dark) .corporate-service-card .line-clamp-1,
+html.light .corporate-service-card .line-clamp-1 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .corporate-service-card .text-\[\#fbfff1\]\/85,
+html.light .corporate-service-card .text-\[\#fbfff1\]\/85 {
+  color: #334155 !important;
+}
+
+/* Light mode: Client Journey Section (Step Cards) set to white theme (strictly in light mode) */
+html:not(.dark) section:nth-of-type(4),
+html.light section:nth-of-type(4) {
+  background-color: #f8fafc !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .client-journey-card,
+html.light .client-journey-card,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .client-journey-card h3,
+html.light .client-journey-card h3,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div h3,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div h3 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .client-journey-card p,
+html.light .client-journey-card p,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div p,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div p {
+  color: #475569 !important;
+}
+
+/* Light mode: Client Journey Step Number Badges */
+html:not(.dark) .step-number-badge,
+html.light .step-number-badge,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #475569 !important;
+  border: 1.5px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+  font-family: var(--font-fa), var(--font-en), system-ui, -apple-system, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+}
+
+html:not(.dark) .step-icon-box,
+html.light .step-icon-box,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) {
+  background-color: #eff6ff !important;
+  background-image: none !important;
+  border-color: #dbeafe !important;
+  color: #3066be !important;
+}
+
+html:not(.dark) .step-icon-box svg,
+html.light .step-icon-box svg,
+html:not(.dark) .step-icon-box svg path,
+html.light .step-icon-box svg path,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div svg,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div svg {
+  color: #3066be !important;
+  stroke: #3066be !important;
+}
+
+/* Light mode: Client Journey Directional Chevron Connector Arrows */
+html:not(.dark) .step-connector-chevron,
+html.light .step-connector-chevron,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) {
+  background-color: #eff6ff !important;
+  background-image: none !important;
+  border-color: #bfdbfe !important;
+  color: #3066be !important;
+  box-shadow: 0 2px 6px -1px rgba(48, 102, 190, 0.15) !important;
+}
+
+html:not(.dark) .step-connector-chevron svg,
+html.light .step-connector-chevron svg,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > svg,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > svg,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > svg,
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > svg,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > svg,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > svg,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > svg,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > svg {
+  color: #3066be !important;
+  stroke: #3066be !important;
+}
+
+/* Light mode: Partnership Section (section:nth-of-type(6)) Main Card */
+html:not(.dark) .partnership-card,
+html.light .partnership-card,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode: Partnership Section right form column inside main card */
+html:not(.dark) .partnership-card .lg\:col-span-7,
+html.light .partnership-card .lg\:col-span-7,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) .lg\:col-span-7,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) .lg\:col-span-7 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Light mode: Role Option Cards (CSS Selectors 1, 2, 3, 4) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode: 3 Trust Pillars (CSS Selectors 6, 7, 8) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode: Privacy & NDA Note (CSS Selector 4) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6) > span:nth-of-type(1) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(6) {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Light mode: Submit Button Text (CSS Selector 5) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > button:nth-of-type(1) > span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+/* Light mode: Standard Gray for Role Option Headings (CSS Selectors 1, 2, 3, 4) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1) {
+  color: #475569 !important;
+}
+
+/* Light mode: Standard Gray for 3 Trust Pillar Titles (CSS Selectors 5, 6, 7) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > span:nth-of-type(1) {
+  color: #475569 !important;
+}
+
+/* Service Type Selector & Menu Enhancements (section:nth-of-type(5)) */
+div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > select:nth-of-type(1) {
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+/* Light mode: Service Type Dropdown Menu Popover (section:nth-of-type(5)) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1),
+html:not(.dark) .dropdown-menu-popover,
+html.light .dropdown-menu-popover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode header bar inside popover */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background-color: #f8fafc !important;
+  border-color: #f1f5f9 !important;
+}
+
+/* Light mode: Dropdown Option Cards 1, 2, 3, 4 (CSS Selectors 1, 2, 3, 4) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div,
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Light mode: Dropdown Trigger Button (CSS Selector 5) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode: Dropdown Trigger Button Chevron Icon Container (div:nth-of-type(2) > div:nth-of-type(1)) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode: Dropdown Trigger Button Chevron Icon SVG (svg:nth-of-type(1)) */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > svg:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > svg:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > svg:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > svg:nth-of-type(1),
+html:not(.dark) .dropdown-trigger-chevron,
+html.light .dropdown-trigger-chevron {
+  color: #64748b !important;
+  stroke: #64748b !important;
+}
+
+/* Light mode: Dropdown option cards structure and typography */
+html:not(.dark) .dropdown-menu-popover .service-option-item,
+html.light .dropdown-menu-popover .service-option-item {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item:hover,
+html.light .dropdown-menu-popover .service-option-item:hover {
+  background-color: #f8fafc !important;
+  border-color: #93c5fd !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item.is-selected,
+html.light .dropdown-menu-popover .service-option-item.is-selected {
+  background-color: #f0f7ff !important;
+  border-color: #3066be !important;
+  box-shadow: 0 1px 3px 0 rgba(48, 102, 190, 0.15) !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item .service-option-title,
+html.light .dropdown-menu-popover .service-option-item .service-option-title {
+  color: #1e293b !important;
+}
+
+/* Light mode: Dropdown option description text black with NO text-shadow */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p,
+html:not(.dark) .dropdown-menu-popover .service-option-item .service-option-desc,
+html:not(.dark) .dropdown-menu-popover .service-option-item p,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p,
+html.light .dropdown-menu-popover .service-option-item .service-option-desc,
+html.light .dropdown-menu-popover .service-option-item p {
+  color: #000000 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item:hover .service-option-desc,
+html:not(.dark) .dropdown-menu-popover .service-option-item:hover p,
+html.light .dropdown-menu-popover .service-option-item:hover .service-option-desc,
+html.light .dropdown-menu-popover .service-option-item:hover p {
+  color: #000000 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item .service-option-chip,
+html.light .dropdown-menu-popover .service-option-item .service-option-chip {
+  color: #475569 !important;
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item .service-option-badge,
+html.light .dropdown-menu-popover .service-option-item .service-option-badge {
+  color: #475569 !important;
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .dropdown-menu-popover .service-option-item.is-selected .service-option-badge,
+html.light .dropdown-menu-popover .service-option-item.is-selected .service-option-badge {
+  color: #1e40af !important;
+  background-color: #dbeafe !important;
+  border-color: #bfdbfe !important;
+}
+
+/* =========================================================
+   LIGHT MODE: LICENSES & ISO CERTIFICATES (SECTION 7)
+   ========================================================= */
+html:not(.dark) section:nth-of-type(7),
+html.light section:nth-of-type(7),
+html:not(.dark) .licenses-section,
+html.light .licenses-section {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .license-cert-card,
+html.light .license-cert-card,
+html:not(.dark) section:nth-of-type(7) .license-cert-card,
+html.light section:nth-of-type(7) .license-cert-card,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .license-cert-body,
+html.light .license-cert-body,
+html:not(.dark) section:nth-of-type(7) .license-cert-body,
+html.light section:nth-of-type(7) .license-cert-body,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+html:not(.dark) section:nth-of-type(7) .license-cert-card h3,
+html.light section:nth-of-type(7) .license-cert-card h3,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div h3,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div h3 {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) section:nth-of-type(7) .license-cert-card p,
+html.light section:nth-of-type(7) .license-cert-card p,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div p,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div p {
+  color: #4b5563 !important;
+}
+
+html:not(.dark) section:nth-of-type(7) .license-cert-card .cert-registrar,
+html.light section:nth-of-type(7) .license-cert-card .cert-registrar,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1) {
+  color: #64748b !important;
+}
+
+html:not(.dark) section:nth-of-type(7) .license-cert-card .cert-link,
+html.light section:nth-of-type(7) .license-cert-card .cert-link,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2) {
+  color: #2563eb !important;
+}
+
+/* =========================================================
+   Articles Page Filter & Tag Buttons - Light Mode Only
+   Focused Elements: button:nth-of-type(2), button:nth-of-type(3), button:nth-of-type(4)
+   ========================================================= */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(4),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(4),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:not([class*="bg-[#3066be]"]) {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2):hover,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3):hover,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(4):hover,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:not([class*="bg-[#3066be]"]):hover,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2):hover,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(3):hover,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(4):hover,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:not([class*="bg-[#3066be]"]):hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button[class*="bg-[#3066be]"],
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button[class*="bg-[#3066be]"] {
+  background-color: #3066be !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* =========================================================
+   Services Page Bottom CTA Card - Solid Background (No Gradient)
+   Focused Element: div:nth-of-type(3)
+   ========================================================= */
+div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) {
+  background-image: none !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.dark div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) {
+  background-image: none !important;
+  background-color: #2d2935 !important;
+  border: 1px solid rgba(180, 197, 228, 0.2) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25) !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > h3:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > h3:nth-of-type(1) {
+  color: #475569 !important;
+}
+
+/* =========================================================
+   Catalog Page Download Buttons & Active Tab Button Spans - Light Mode White Text
+   Focused Elements:
+   div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)
+   ========================================================= */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) svg,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Light mode Catalog Tab 1 (button:nth-of-type(1)) when inactive: Standard gray text and badge */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) > span:nth-of-type(2) {
+  color: #64748b !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) svg,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1):not([class*="bg-[#3066be]"]) svg {
+  color: #64748b !important;
+  stroke: #64748b !important;
+}
+
+/* Corporate Catalog Showcase & 3D Mockup */
+.corporate-catalog-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+html:not(.dark) .corporate-catalog-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .corporate-catalog-card:hover {
+  border-color: rgba(48, 102, 190, 0.6) !important;
+  box-shadow: 0 20px 30px -10px rgba(48, 102, 190, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.dark .corporate-catalog-card {
+  background-color: #2d2935 !important;
+  border-color: rgba(180, 197, 228, 0.2) !important;
+  box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .corporate-catalog-card:hover {
+  border-color: rgba(48, 102, 190, 0.7) !important;
+  box-shadow: 0 20px 35px -8px rgba(48, 102, 190, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* =========================================================
+   Official Licenses / Certificate Detail Modal - Light Mode Pure White & Muted Slate Cards
+   Targeting user request:
+   1. Modal Main Background: Pure White (#FFFFFF)
+   2. Inner Metric & Compliance Cards: Soft Gray (#F8FAFC) with subtle slate border (#E2E8F0)
+   3. Texts and Icons: Dark slate (#1F2937, #4B5563) for high contrast and readability
+   4. Close Button (X icon): Dark text/icon
+   ========================================================= */
+html:not(.dark) .license-modal-content,
+html.light .license-modal-content,
+html:not(.dark) section .license-modal-content,
+html.light section .license-modal-content {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .license-modal-content h3,
+html.light .license-modal-content h3,
+html:not(.dark) .license-modal-content h4,
+html.light .license-modal-content h4 {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .license-modal-content p,
+html.light .license-modal-content p {
+  color: #4b5563 !important;
+}
+
+/* Inner spec & compliance cards in light mode */
+html:not(.dark) .license-modal-content .bg-\[\#f8fafc\],
+html.light .license-modal-content .bg-\[\#f8fafc\],
+html:not(.dark) .license-modal-content [class*="bg-[#f8fafc]"],
+html.light .license-modal-content [class*="bg-[#f8fafc]"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Close button and X icon in light mode */
+html:not(.dark) .license-modal-close,
+html.light .license-modal-close {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .license-modal-close svg,
+html.light .license-modal-close svg {
+  color: #1f2937 !important;
+  stroke: #1f2937 !important;
+}
+
+html:not(.dark) .license-modal-close:hover,
+html.light .license-modal-close:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .license-modal-close:hover svg,
+html.light .license-modal-close:hover svg {
+  color: #0f172a !important;
+  stroke: #0f172a !important;
+}
+
+/* Focused CSS Selector in Light Mode */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) .license-cert-card,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) .license-cert-card,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Market Ticker Scoped Container */
+.market-ticker-wrapper > div {
+  width: 100% !important;
+  max-width: 80rem !important;
+}
+
+@media (max-width: 768px) {
+  html:not(.dark) .market-ticker-wrapper,
+  html.light .market-ticker-wrapper {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .market-ticker-wrapper > div {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* =========================================================
+   ARTICLE / BLOG CARDS - COMPLETE DUAL-MODE (LIGHT & DARK)
+   Focused Elements:
+   Selector 1: div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)
+   Selector 2: div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)
+   Selector 3: div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)
+   Class: .article-card
+   ========================================================= */
+
+/* --- 1. LIGHT MODE STYLING --- */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3),
+html:not(.dark) .article-card,
+html.light .article-card {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+html:not(.dark) .article-card:hover,
+html.light .article-card:hover {
+  border-color: #3066be !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Light Mode Article Titles */
+html:not(.dark) .article-card h3,
+html.light .article-card h3 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .article-card:hover h3,
+html.light .article-card:hover h3 {
+  color: #3066be !important;
+}
+
+/* Light Mode Excerpts */
+html:not(.dark) .article-card p,
+html.light .article-card p {
+  color: #475569 !important;
+}
+
+/* Light Mode Meta Information (Date, Reading Time, Author) */
+html:not(.dark) .article-card .font-mono span,
+html:not(.dark) .article-card div:first-of-type span,
+html:not(.dark) .article-card .pt-3\.5 span,
+html.light .article-card .font-mono span,
+html.light .article-card div:first-of-type span,
+html.light .article-card .pt-3\.5 span {
+  color: #475569 !important;
+}
+
+/* Light Mode Tags (Hashtags): Soft gray background, delicate border, dark text */
+html:not(.dark) .article-card .rounded-full[class*="bg-slate-100"],
+html:not(.dark) .article-card div:nth-of-type(2) > div:first-of-type span,
+html.light .article-card .rounded-full[class*="bg-slate-100"],
+html.light .article-card div:nth-of-type(2) > div:first-of-type span {
+  background-color: #f1f5f9 !important;
+  background-image: none !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+  border-radius: 9999px !important;
+}
+
+html:not(.dark) .article-card div:nth-of-type(2) > div:first-of-type span:hover,
+html.light .article-card div:nth-of-type(2) > div:first-of-type span:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Light Mode Separator */
+html:not(.dark) .article-card .pt-3\.5,
+html.light .article-card .pt-3\.5 {
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Light Mode "Read Article" link */
+html:not(.dark) .article-card .pt-3\.5 span.font-bold,
+html:not(.dark) .article-card .pt-3\.5 span.font-bold span,
+html.light .article-card .pt-3\.5 span.font-bold,
+html.light .article-card .pt-3\.5 span.font-bold span {
+  color: #3066be !important;
+}
+
+html:not(.dark) .article-card:hover .pt-3\.5 span.font-bold,
+html:not(.dark) .article-card:hover .pt-3\.5 span.font-bold span,
+html.light .article-card:hover .pt-3\.5 span.font-bold,
+html.light .article-card:hover .pt-3\.5 span.font-bold span {
+  color: #1d4ed8 !important;
+}
+
+html:not(.dark) .article-card .pt-3\.5 span.font-bold svg,
+html.light .article-card .pt-3\.5 span.font-bold svg {
+  color: #3066be !important;
+  stroke: #3066be !important;
+}
+
+html:not(.dark) .article-card:hover .pt-3\.5 span.font-bold svg,
+html.light .article-card:hover .pt-3\.5 span.font-bold svg {
+  color: #1d4ed8 !important;
+  stroke: #1d4ed8 !important;
+}
+
+/* --- 2. DARK MODE STYLING --- */
+html.dark div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1),
+html.dark div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+html.dark div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3),
+html.dark .article-card {
+  background-color: #2d2935 !important;
+  background-image: none !important;
+  border: 1px solid rgba(180, 197, 228, 0.2) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+html.dark .article-card:hover {
+  border-color: rgba(48, 102, 190, 0.7) !important;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(48, 102, 190, 0.15) !important;
+}
+
+/* Dark Mode Article Titles: Pristine White */
+html.dark .article-card h3 {
+  color: #fbfff1 !important;
+}
+
+html.dark .article-card:hover h3 {
+  color: #93c5fd !important;
+}
+
+/* Dark Mode Excerpts: Light readable gray */
+html.dark .article-card p {
+  color: rgba(203, 213, 225, 0.9) !important;
+}
+
+/* Dark Mode Meta Information (Date, Reading Time, Author) */
+html.dark .article-card .font-mono span,
+html.dark .article-card div:first-of-type span,
+html.dark .article-card .pt-3\.5 span {
+  color: #cbd5e1 !important;
+}
+
+/* Dark Mode Tags (Hashtags): Dark capsule with subtle border */
+html.dark .article-card div:nth-of-type(2) > div:first-of-type span {
+  background-color: #1f1c25 !important;
+  background-image: none !important;
+  border: 1px solid rgba(180, 197, 228, 0.2) !important;
+  color: #b4c5e4 !important;
+  border-radius: 9999px !important;
+}
+
+html.dark .article-card div:nth-of-type(2) > div:first-of-type span:hover {
+  background-color: #35303d !important;
+  color: #fbfff1 !important;
+  border-color: rgba(180, 197, 228, 0.35) !important;
+}
+
+/* Dark Mode Separator */
+html.dark .article-card .pt-3\.5 {
+  border-top: 1px solid rgba(180, 197, 228, 0.15) !important;
+}
+
+/* Dark Mode "Read Article" link */
+html.dark .article-card .pt-3\.5 span.font-bold,
+html.dark .article-card .pt-3\.5 span.font-bold span {
+  color: #93c5fd !important;
+}
+
+html.dark .article-card:hover .pt-3\.5 span.font-bold,
+html.dark .article-card:hover .pt-3\.5 span.font-bold span {
+  color: #ffffff !important;
+}
+
+html.dark .article-card .pt-3\.5 span.font-bold svg {
+  color: #93c5fd !important;
+  stroke: #93c5fd !important;
+}
+
+html.dark .article-card:hover .pt-3\.5 span.font-bold svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  /* Ensure ticker rates and prices are fully legible, crisp, and high contrast on mobile */
+  .market-rate-card {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .market-rate-card .rate-name {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+  }
+
+  .market-rate-card .rate-price {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+  }
+
+  .market-rate-card .rate-change {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 10px !important;
+  }
+}
+
+/* =========================================================
+   SCROLLBAR ORIENTATION & CONTENT DIRECTION CONTROL
+   - Persian ('fa'): Scrollbar on the RIGHT (viewport direction: ltr),
+     Content flow: RTL (direction: rtl)
+   - English ('en'), Arabic ('ar'), Turkish ('tr'): Scrollbar on the LEFT (viewport direction: rtl),
+     Content flow:
+       - Arabic ('ar'): RTL (direction: rtl)
+       - English ('en') & Turkish ('tr'): LTR (direction: ltr)
+   ========================================================= */
+html[data-scroll-side="right"],
+html[data-scroll-side="right"] body {
+  direction: ltr !important;
+}
+
+html[data-scroll-side="left"],
+html[data-scroll-side="left"] body {
+  direction: rtl !important;
+}
+
+#root[dir="rtl"],
+#app-main-wrapper[dir="rtl"],
+[data-content-dir="rtl"] {
+  direction: rtl !important;
+  text-align: right;
+  font-family: var(--font-fa);
+}
+
+#root[dir="ltr"],
+#app-main-wrapper[dir="ltr"],
+[data-content-dir="ltr"] {
+  direction: ltr !important;
+  text-align: left;
+  font-family: var(--font-en);
+}
+
+/* Focused Elements: Steel Calculator Sheet Type Option Buttons (Buttons 2, 3, 4) in Light Mode: Standard Gray when inactive */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2):not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2):not([class*="bg-[#3066be]"]),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2):not([class*="bg-[#3066be]"]) *,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3):not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3):not([class*="bg-[#3066be]"]),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3):not([class*="bg-[#3066be]"]) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3):not([class*="bg-[#3066be]"]) *,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4):not([class*="bg-[#3066be]"]),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4):not([class*="bg-[#3066be]"]),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4):not([class*="bg-[#3066be]"]) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4):not([class*="bg-[#3066be]"]) * {
+  color: #475569 !important;
+}
+
+/* Focused Elements: When clicked / selected with active blue bg, text MUST change to white in Light Mode */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)[class*="bg-[#3066be]"],
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)[class*="bg-[#3066be]"],
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)[class*="bg-[#3066be]"] *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)[class*="bg-[#3066be]"] *,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)[class*="bg-[#3066be]"],
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)[class*="bg-[#3066be]"],
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)[class*="bg-[#3066be]"] *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(3)[class*="bg-[#3066be]"] *,
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4)[class*="bg-[#3066be]"],
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4)[class*="bg-[#3066be]"],
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4)[class*="bg-[#3066be]"] *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(4)[class*="bg-[#3066be]"] * {
+  color: #ffffff !important;
+}
+
+/* Focused Element 1: Steel Calculator weight per sheet value in Light Mode: Standard Gray Text */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > span:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > span:nth-of-type(2) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > span:nth-of-type(2) * {
+  color: #475569 !important;
+}
+
+/* Focused Element 2: Steel Calculator copy button svg icon in Light Mode: Standard Gray */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(2) > svg:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(2) > svg:nth-of-type(1) {
+  color: #475569 !important;
+  stroke: #475569 !important;
+}
+
+/* Focused Element: Request Quote Button Text in Light Mode: Pure White */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(1) {
+  color: #ffffff !important;
+}
+
+/* Focused Elements: ServiceDetailPage Technical Specs Values in Light Mode: Standard Gray */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2) *,
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2) *,
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(2) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(2) *,
+
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(2),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(2),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(2) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(2) * {
+  color: #475569 !important;
+}
+
+/* Focused Element: QuoteModal Submit Button Text in Light Mode: Pure White */
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(1),
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(1),
+html:not(.dark) div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(1) *,
+html.light div#root:nth-of-type(1) > div#app-main-wrapper:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(5) > button:nth-of-type(1) > span:nth-of-type(1) * {
+  color: #ffffff !important;
+}

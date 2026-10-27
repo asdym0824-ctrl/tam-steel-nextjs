@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" width="120" height="130">
+  <defs>
+    <linearGradient id="enamadBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Shield Card -->
+  <rect x="5" y="5" width="110" height="120" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Top 5 Stars (Enamad Star Rating) -->
+  <g fill="url(#goldStar)" transform="translate(60, 20) scale(0.7)">
+    <g transform="translate(-40, 0)"><polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2"/></g>
+    <g transform="translate(-20, 0)"><polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2"/></g>
+    <g transform="translate(0, 0)"><polygon points="0,-8 2.5,-2 8,-2 3.5,1.5 5.5,7 0,3.5 -5.5,7 -3.5,1.5 -8,-2 -2.5,-2"/></g>
+    <g transform="translate(20, 0)"><polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2"/></g>
+    <g transform="translate(40, 0)"><polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2"/></g>
+  </g>
+
+  <!-- Central Enamad 'e' Emblem -->
+  <g transform="translate(60, 58)">
+    <circle r="26" fill="url(#enamadBlue)"/>
+    <circle r="24" fill="none" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Stylized 'e' letterform and ribbon -->
+    <path d="M-12,-2 C-12,-11 3,-16 12,-10 C17,-6 17,2 11,5 C5,8 -8,7 -12,2 Z" fill="#ffffff"/>
+    <path d="M-11,0 C-11,8 0,14 10,12 C13,11 15,9 16,8" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="1" cy="-4" r="5" fill="url(#enamadBlue)"/>
+    <path d="M-6,14 L12,14" stroke="url(#goldStar)" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Official Persian Text -->
+  <text x="60" y="98" font-family="Vazirmatn, Tahoma, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    اینماد
+  </text>
+  <text x="60" y="112" font-family="Vazirmatn, Tahoma, sans-serif" font-size="7.5" fill="#64748b" text-anchor="middle">
+    نماد اعتماد الکترونیکی
+  </text>
+</svg>

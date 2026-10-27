@@ -1,0 +1,6 @@
+{
+  "name": "تام فولاد | صنایع فولاد و خدمات بازرگانی",
+  "description": "پرتال جامع خدمات، بازرگانی، استعلام قیمت آهن‌آلات و قرارداد دیجیتال صنایع تام فولاد",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

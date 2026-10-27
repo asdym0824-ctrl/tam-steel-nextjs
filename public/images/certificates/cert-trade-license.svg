@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="parchment" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffef9"/>
+      <stop offset="50%" stop-color="#fdfbf3"/>
+      <stop offset="100%" stop-color="#f5efe0"/>
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c59b27"/>
+      <stop offset="30%" stop-color="#f3e5ab"/>
+      <stop offset="60%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#8b6508"/>
+    </linearGradient>
+    <linearGradient id="sealGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#aa7c11"/>
+    </linearGradient>
+    <pattern id="guilloche" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 20 Q 10 0, 20 20 T 40 20" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.2"/>
+      <path d="M20 0 Q 0 10, 20 20 T 20 40" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Paper -->
+  <rect width="800" height="560" fill="url(#parchment)"/>
+  <rect width="800" height="560" fill="url(#guilloche)"/>
+
+  <!-- Outer Golden Guilloche Frame -->
+  <rect x="20" y="20" width="760" height="520" rx="8" fill="none" stroke="url(#goldBorder)" stroke-width="6"/>
+  <rect x="30" y="30" width="740" height="500" rx="4" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-opacity="0.6"/>
+  <rect x="36" y="36" width="728" height="488" rx="2" fill="none" stroke="url(#goldBorder)" stroke-width="1"/>
+
+  <!-- Corner Ornaments -->
+  <g fill="none" stroke="url(#goldBorder)" stroke-width="2">
+    <path d="M 36 60 L 60 60 L 60 36"/>
+    <circle cx="60" cy="60" r="4" fill="#c59b27"/>
+    <path d="M 764 60 L 740 60 L 740 36"/>
+    <circle cx="740" cy="60" r="4" fill="#c59b27"/>
+    <path d="M 36 500 L 60 500 L 60 524"/>
+    <circle cx="60" cy="500" r="4" fill="#c59b27"/>
+    <path d="M 764 500 L 740 500 L 740 524"/>
+    <circle cx="740" cy="500" r="4" fill="#c59b27"/>
+  </g>
+
+  <!-- Top Crest / Emblem -->
+  <g transform="translate(400, 75)" text-anchor="middle">
+    <circle cx="0" cy="0" r="22" fill="#090c9b" stroke="url(#goldBorder)" stroke-width="2" filter="url(#shadow)"/>
+    <path d="M-8 -6 L0 -14 L8 -6 L5 10 L-5 10 Z" fill="#f3e5ab"/>
+    <circle cx="0" cy="-2" r="3" fill="#090c9b"/>
+  </g>
+
+  <!-- Header Texts -->
+  <text x="400" y="118" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#090c9b" text-anchor="middle" letter-spacing="1">
+    جمهوری اسلامی ایران - اتاق اصناف تهران
+  </text>
+  <text x="400" y="138" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+    اتحادیه صنف فروشندگان و توزیع‌کنندگان آهن، فولاد و مقاطع فلزی
+  </text>
+
+  <line x1="200" y1="150" x2="600" y2="150" stroke="url(#goldBorder)" stroke-width="1.5"/>
+  <circle cx="400" cy="150" r="4" fill="#c59b27"/>
+
+  <!-- Certificate Title -->
+  <text x="400" y="185" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" font-weight="900" fill="#090c9b" text-anchor="middle">
+    پروانه کسب رسمی و فعالیت صنفی
+  </text>
+  <text x="400" y="206" font-family="sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" letter-spacing="2">
+    OFFICIAL ACCREDITED GUILD TRADE LICENSE
+  </text>
+
+  <!-- Body Content -->
+  <g transform="translate(400, 245)" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif">
+    <text y="0" font-size="13" fill="#334155">
+      بدینوسیله گواهی می‌شود واحد بازرگانی و صنعتی
+    </text>
+    <rect x="-180" y="12" width="360" height="36" rx="6" fill="#090c9b" fill-opacity="0.08" stroke="#090c9b" stroke-width="1" stroke-dasharray="4 2"/>
+    <text y="36" font-size="18" font-weight="bold" fill="#090c9b">
+      صنایع تام فولاد (سهامی خاص)
+    </text>
+    <text y="75" font-size="12" fill="#475569">
+      دارای مجوز قانونی فعالیت در زمینه تامین، برشکاری، اسلیتینگ و توزیع تخصصی انواع ورق‌های فولادی
+    </text>
+    <text y="95" font-size="12" fill="#475569">
+      در سامانه جامع تجارت و اتاق اصناف به شماره ثبت رسمی معتبر شناخته می‌شود.
+    </text>
+  </g>
+
+  <!-- Details Table -->
+  <g transform="translate(80, 375)" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11">
+    <!-- Box 1 -->
+    <rect x="0" y="0" width="190" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="95" y="20" fill="#64748b" text-anchor="middle" font-size="10">شماره پروانه صنفی</text>
+    <text x="95" y="40" fill="#0f172a" text-anchor="middle" font-weight="bold" font-family="monospace" font-size="13">۰۴۶۸۵۲۱۳۷۱</text>
+
+    <!-- Box 2 -->
+    <rect x="220" y="0" width="190" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="315" y="20" fill="#64748b" text-anchor="middle" font-size="10">تاریخ صدور و اعتبار</text>
+    <text x="315" y="40" fill="#0f172a" text-anchor="middle" font-weight="bold">۱۳۹۴ - ۱۴۰۶ (معتبر)</text>
+
+    <!-- Box 3 -->
+    <rect x="440" y="0" width="190" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="535" y="20" fill="#64748b" text-anchor="middle" font-size="10">کد رهگیری اصناف</text>
+    <text x="535" y="40" fill="#090c9b" text-anchor="middle" font-weight="bold" font-family="monospace" font-size="12">LIC-TRADE-1403</text>
+  </g>
+
+  <!-- Official Red Wax / Ink Stamp -->
+  <g transform="translate(680, 440)">
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.85"/>
+    <circle cx="0" cy="0" r="37" fill="none" stroke="#dc2626" stroke-width="1" opacity="0.85"/>
+    <text x="0" y="-12" font-family="Vazirmatn, Tahoma, sans-serif" font-size="9" font-weight="bold" fill="#dc2626" text-anchor="middle" opacity="0.9">اتحادیه صنف آهن</text>
+    <text x="0" y="4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" font-weight="black" fill="#dc2626" text-anchor="middle" opacity="0.9">ثبت رسمی</text>
+    <text x="0" y="18" font-family="Vazirmatn, Tahoma, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle" opacity="0.85">تایید صلاحیت صنفی</text>
+  </g>
+
+  <!-- Golden Medal / Ribbon Seal -->
+  <g transform="translate(130, 455)" filter="url(#shadow)">
+    <!-- Ribbon tails -->
+    <path d="M-18 20 L-26 58 L-12 50 L0 58 L0 20 Z" fill="#090c9b"/>
+    <path d="M18 20 L26 58 L12 50 L0 58 L0 20 Z" fill="#3066be"/>
+    <!-- Medallion -->
+    <circle cx="0" cy="0" r="30" fill="url(#sealGold)" stroke="#8b6508" stroke-width="2"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="0" y="-3" font-family="sans-serif" font-size="8" font-weight="bold" fill="#3d2c02" text-anchor="middle">ACCREDITED</text>
+    <text x="0" y="8" font-family="sans-serif" font-size="11" font-weight="black" fill="#3d2c02" text-anchor="middle">VALID</text>
+    <text x="0" y="17" font-family="sans-serif" font-size="7" fill="#3d2c02" text-anchor="middle">GUILD SEAL</text>
+  </g>
+
+  <!-- Signature Lines -->
+  <g transform="translate(400, 475)" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif">
+    <!-- Signature squiggle -->
+    <path d="M -40 -12 Q -20 -25 0 -10 T 35 -15 T 45 -5" fill="none" stroke="#1e293b" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-70" y1="0" x2="70" y2="0" stroke="#94a3b8" stroke-width="1"/>
+    <text y="15" font-size="9" fill="#64748b">امضای ریاست اتحادیه و تایید دبیرخانه</text>
+  </g>
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="40%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090c9b"/>
+    </linearGradient>
+    <linearGradient id="goldHolo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="25%" stop-color="#ffe4b5"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#f5deb3"/>
+      <stop offset="100%" stop-color="#aa7c11"/>
+    </linearGradient>
+    <linearGradient id="chipGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <pattern id="microLines" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 10 H 20 M10 0 V 20" fill="none" stroke="#38bdf8" stroke-width="0.3" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="#0b0f19"/>
+
+  <!-- Outer Document Frame -->
+  <rect x="25" y="25" width="750" height="510" rx="16" fill="url(#cardBg)" stroke="url(#goldHolo)" stroke-width="3"/>
+  <rect x="35" y="35" width="730" height="490" rx="12" fill="url(#microLines)"/>
+
+  <!-- Top Header Ribbon -->
+  <g transform="translate(400, 70)" text-anchor="middle">
+    <!-- Emblem -->
+    <circle cx="0" cy="0" r="24" fill="#1e293b" stroke="url(#goldHolo)" stroke-width="2"/>
+    <path d="M-10 6 L0 -12 L10 6 L0 12 Z" fill="url(#goldHolo)"/>
+    <circle cx="0" cy="0" r="3" fill="#090c9b"/>
+    <text y="42" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">
+      اتاق بازرگانی، صنایع، معادن و کشاورزی ایران
+    </text>
+    <text y="58" font-family="sans-serif" font-size="10" fill="#94a3b8" letter-spacing="1.5">
+      IRAN CHAMBER OF COMMERCE, INDUSTRIES, MINES &amp; AGRICULTURE
+    </text>
+  </g>
+
+  <!-- Certificate Subtitle -->
+  <g transform="translate(400, 160)" text-anchor="middle">
+    <rect x="-180" y="-18" width="360" height="34" rx="17" fill="#3066be" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1"/>
+    <text y="4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="black" fill="#38bdf8">
+      کارت بازرگانی معتبر - رتبه اعتباری سطح الف
+    </text>
+  </g>
+
+  <!-- Smart Card Graphic Section -->
+  <g transform="translate(80, 200)">
+    <!-- Simulated Smart Card Container -->
+    <rect x="0" y="0" width="280" height="175" rx="14" fill="#182234" stroke="url(#goldHolo)" stroke-width="2" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.5))"/>
+
+    <!-- Chip -->
+    <rect x="30" y="35" width="46" height="36" rx="6" fill="url(#chipGold)" stroke="#854d0e" stroke-width="1"/>
+    <path d="M 30 53 H 76 M 53 35 V 71" stroke="#713f12" stroke-width="0.8"/>
+
+    <!-- Hologram Seal -->
+    <circle cx="230" cy="50" r="22" fill="url(#goldHolo)" opacity="0.85"/>
+    <text x="230" y="54" font-family="sans-serif" font-size="8" font-weight="black" fill="#0f172a" text-anchor="middle">ICCIM</text>
+
+    <!-- Company name on card -->
+    <text x="30" y="115" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">
+      صنایع تام فولاد
+    </text>
+    <text x="30" y="132" font-family="sans-serif" font-size="10" fill="#94a3b8">
+      TAM STEEL INDUSTRIAL CO.
+    </text>
+
+    <!-- Card Number -->
+    <text x="30" y="155" font-family="monospace" font-size="13" font-weight="bold" fill="#f8fafc" letter-spacing="2">
+      1010 3849 1200 488
+    </text>
+  </g>
+
+  <!-- Right Details Information -->
+  <g transform="translate(400, 205)" font-family="Vazirmatn, Tahoma, sans-serif">
+    <text x="0" y="20" font-size="14" font-weight="bold" fill="#f8fafc">
+      دارنده پروانه واردات و ثبت سفارش مواد اولیه فولادی
+    </text>
+    <text x="0" y="42" font-size="12" fill="#94a3b8">
+      مجوز صادرات، ترخیص گمرکی تخصصی و تامین کویل‌های استنلس استیل
+    </text>
+
+    <!-- Grid info -->
+    <g transform="translate(0, 65)">
+      <rect x="0" y="0" width="165" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="18" font-size="10" fill="#64748b">کد اقتصادی شرکت</text>
+      <text x="12" y="36" font-size="12" font-weight="bold" fill="#38bdf8" font-family="monospace">4114-8973-2195</text>
+
+      <rect x="180" y="0" width="165" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="192" y="18" font-size="10" fill="#64748b">شناسه ملی ثبتی</text>
+      <text x="192" y="36" font-size="12" font-weight="bold" fill="#f8fafc" font-family="monospace">14008273915</text>
+    </g>
+
+    <g transform="translate(0, 125)">
+      <rect x="0" y="0" width="165" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="18" font-size="10" fill="#64748b">سامانه نیما و جامع تجارت</text>
+      <text x="12" y="36" font-size="11" font-weight="bold" fill="#22c55e">تایید و فعال</text>
+
+      <rect x="180" y="0" width="165" height="48" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="192" y="18" font-size="10" fill="#64748b">تاریخ انقضای اعتبار</text>
+      <text x="192" y="36" font-size="11" font-weight="bold" fill="#f8fafc">۱۴۰۶/۰۵/۱۹</text>
+    </g>
+  </g>
+
+  <!-- Bottom Verification Bar -->
+  <g transform="translate(80, 420)">
+    <rect x="0" y="0" width="640" height="70" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+
+    <!-- Barcode simulation -->
+    <g transform="translate(30, 15)">
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#f8fafc" stroke-width="3"/>
+      <line x1="6" y1="0" x2="6" y2="40" stroke="#f8fafc" stroke-width="1"/>
+      <line x1="12" y1="0" x2="12" y2="40" stroke="#f8fafc" stroke-width="4"/>
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#f8fafc" stroke-width="2"/>
+      <line x1="26" y1="0" x2="26" y2="40" stroke="#f8fafc" stroke-width="1"/>
+      <line x1="32" y1="0" x2="32" y2="40" stroke="#f8fafc" stroke-width="5"/>
+      <line x1="42" y1="0" x2="42" y2="40" stroke="#f8fafc" stroke-width="2"/>
+      <line x1="50" y1="0" x2="50" y2="40" stroke="#f8fafc" stroke-width="3"/>
+      <line x1="58" y1="0" x2="58" y2="40" stroke="#f8fafc" stroke-width="1"/>
+      <line x1="64" y1="0" x2="64" y2="40" stroke="#f8fafc" stroke-width="4"/>
+    </g>
+
+    <text x="120" y="32" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">
+      دارای بارکد و امضای دیجیتال تصدیق اصالت در گمرکات جمهوری اسلامی ایران
+    </text>
+    <text x="120" y="50" font-family="sans-serif" font-size="10" fill="#64748b">
+      CERTIFIED EXTERNAL TRADE ACCREDITATION - IRAN CUSTOMS APPROVED
+    </text>
+
+    <!-- Golden Seal -->
+    <circle cx="590" cy="35" r="24" fill="url(#goldHolo)"/>
+    <text x="590" y="39" font-family="sans-serif" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">VERIFIED</text>
+  </g>
+</svg>
